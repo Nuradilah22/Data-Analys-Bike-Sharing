@@ -8,7 +8,7 @@ st.markdown("Analyzing bike rental trends by date and hour.")
 
 @st.cache_data
 def load_data():
-    main_df = pd.read_csv("main_data.csv")
+    main_df = pd.read_csv("dashboard/main_data.csv")
     main_df["dteday"] = pd.to_datetime(main_df["dteday"])
     return main_df
 
