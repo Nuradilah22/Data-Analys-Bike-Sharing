@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 import streamlit as st
 
 st.title("Dashboard Penyewaan Sepeda ✨")
@@ -8,7 +9,8 @@ st.write("Analisis pola penyewaan sepeda berdasarkan waktu dan musim.")
 
 # load data
 def load_data():
-    data = pd.read_csv(r"D:\dila\submission\dashboard\all_data.csv", parse_dates=["dteday"])
+    file_path = os.path.join(os.getcwd(), "dashboard", "all_data.csv")
+    data = pd.read_csv(file_path, parse_dates=["dteday"])
     data.rename(columns={"dteday": "date"}, inplace=True)
 
     season_mapping = {1: "Spring", 2: "Summer", 3: "Fall", 4: "Winter"}
@@ -17,7 +19,7 @@ def load_data():
     
     return data 
  
-data = load_data()   
+data = load_data()    
 
 # sidebar
 st.sidebar.image("https://raw.githubusercontent.com/Nuradilah22/Data-Analys-Bike-Sharing/refs/heads/dilaa/sepeda.png")
