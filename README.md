@@ -1,20 +1,20 @@
 # Data-analysis-bike-sharing
 
-# Setup Virtual Environment
+# Setup Virtual Environment - Anaconda
 ```sh
 python -m venv venv
-venv\Scripts\activate
+.\venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
 # Setup Shell/terminal
 ```sh
 cd submission
-pipenv install
+pip install pipenv
 pipenv shell
 pip install -r requirements.txt
 ```
 
 # run Dashboard Streamlit
 ```sh
-streamlit run dashboard/dashboard.py
+streamlit run dashboard.py
